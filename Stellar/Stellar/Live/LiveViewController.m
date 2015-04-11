@@ -9,6 +9,9 @@
 #import "LiveViewController.h"
 
 @interface LiveViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *streamingWebview;
+@property (weak, nonatomic) IBOutlet UIView *galleryContainerView;
+@property (weak, nonatomic) IBOutlet UIView *streamingContainerView;
 
 @end
 
@@ -24,10 +27,36 @@
     }
     return self;
 }
+- (IBAction)toggleViews:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+    
+    if (selectedSegment == 0) {
+        //toggle the correct view to be visible
+        [self.galleryContainerView setHidden:NO];
+        [self.streamingContainerView setHidden:YES];
+    }
+    else{
+        //toggle the correct view to be visible
+        [self.streamingContainerView setHidden:NO];
+        [self.galleryContainerView setHidden:YES];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSString* url = @"http://www.ustream.tv/embed/6540154?v=3&amp;wmode=direct";
+    
+    NSURL* nsUrl = [NSURL URLWithString:url];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
+    
+    self.streamingWebview.scalesPageToFit = YES;
+    [self.streamingWebview loadRequest:request];
+
+    self.streamingWebview.scalesPageToFit = YES;
+    self.streamingWebview.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didReceiveMemoryWarning {
