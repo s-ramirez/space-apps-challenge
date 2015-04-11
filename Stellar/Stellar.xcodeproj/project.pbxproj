@@ -22,6 +22,8 @@
 		2AD0C0061AD9A69600453D1D /* AstronautsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0C0041AD9A69600453D1D /* AstronautsViewController.xib */; };
 		2AD0C00E1AD9A73900453D1D /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0C00C1AD9A73900453D1D /* LiveViewController.m */; };
 		2AD0C00F1AD9A73900453D1D /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0C00D1AD9A73900453D1D /* LiveViewController.xib */; };
+		2AF618971AD9CF7900537E43 /* ChallengeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618951AD9CF7900537E43 /* ChallengeTableViewCell.m */; };
+		2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		2AD0C00B1AD9A73900453D1D /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveViewController.h; path = Live/LiveViewController.h; sourceTree = "<group>"; };
 		2AD0C00C1AD9A73900453D1D /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiveViewController.m; path = Live/LiveViewController.m; sourceTree = "<group>"; };
 		2AD0C00D1AD9A73900453D1D /* LiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LiveViewController.xib; path = Live/LiveViewController.xib; sourceTree = "<group>"; };
+		2AF618941AD9CF7900537E43 /* ChallengeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChallengeTableViewCell.h; path = challengeCell/ChallengeTableViewCell.h; sourceTree = "<group>"; };
+		2AF618951AD9CF7900537E43 /* ChallengeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChallengeTableViewCell.m; path = challengeCell/ChallengeTableViewCell.m; sourceTree = "<group>"; };
+		2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChallengeTableViewCell.xib; path = challengeCell/ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +170,7 @@
 		2AD0C0091AD9A70E00453D1D /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
+				2AF618931AD9CF1800537E43 /* ChallengeCell */,
 				2AD0BFF81AD9A63700453D1D /* ChallengesViewController.h */,
 				2AD0BFF91AD9A63700453D1D /* ChallengesViewController.m */,
 				2AD0BFFA1AD9A63700453D1D /* ChallengesViewController.xib */,
@@ -190,6 +196,16 @@
 				2AD0C00D1AD9A73900453D1D /* LiveViewController.xib */,
 			);
 			name = Live;
+			sourceTree = "<group>";
+		};
+		2AF618931AD9CF1800537E43 /* ChallengeCell */ = {
+			isa = PBXGroup;
+			children = (
+				2AF618941AD9CF7900537E43 /* ChallengeTableViewCell.h */,
+				2AF618951AD9CF7900537E43 /* ChallengeTableViewCell.m */,
+				2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */,
+			);
+			name = ChallengeCell;
 			sourceTree = "<group>";
 		};
 		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
@@ -280,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD0C00F1AD9A73900453D1D /* LiveViewController.xib in Resources */,
+				2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */,
 				2AD0BFDE1AD9A38200453D1D /* LaunchScreen.xib in Resources */,
 				2AD0BFDB1AD9A38200453D1D /* Images.xcassets in Resources */,
 				2AD0BFFC1AD9A63700453D1D /* ChallengesViewController.xib in Resources */,
@@ -304,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD0BFD01AD9A38200453D1D /* AppDelegate.m in Sources */,
+				2AF618971AD9CF7900537E43 /* ChallengeTableViewCell.m in Sources */,
 				2AD0BFCD1AD9A38200453D1D /* main.m in Sources */,
 				2AD0BFFB1AD9A63700453D1D /* ChallengesViewController.m in Sources */,
 				2AD0BFF61AD9A60700453D1D /* LoginViewController.m in Sources */,

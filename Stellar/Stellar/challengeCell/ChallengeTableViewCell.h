@@ -1,5 +1,5 @@
 //
-//  ChallengesViewController.h
+//  ChallengeTableViewCell.h
 //  Stellar
 //
 //  Created by Kai on 4/11/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChallengesViewController : UIViewController <UITableViewDelegate>
+@interface ChallengeTableViewCell : UITableViewCell
 
 @end
