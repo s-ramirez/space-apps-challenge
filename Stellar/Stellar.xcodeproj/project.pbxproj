@@ -111,6 +111,7 @@
 				2AD0C0081AD9A6B000453D1D /* Profile */,
 				2AD0C0071AD9A6A400453D1D /* Astronauts */,
 				2AD0C0101AD9A74100453D1D /* Live */,
+				72C9D6C91AD9CCE80013CAC9 /* Frameworks */,
 			);
 			path = Stellar;
 			sourceTree = "<group>";
@@ -189,6 +190,13 @@
 				2AD0C00D1AD9A73900453D1D /* LiveViewController.xib */,
 			);
 			name = Live;
+			sourceTree = "<group>";
+		};
+		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +492,7 @@
 				2AD0BFEF1AD9A38200453D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AD0BFF01AD9A38200453D1D /* Build configuration list for PBXNativeTarget "StellarTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +501,7 @@
 				2AD0BFF21AD9A38200453D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
