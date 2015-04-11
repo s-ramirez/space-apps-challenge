@@ -24,6 +24,8 @@
 		2AD0C00F1AD9A73900453D1D /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0C00D1AD9A73900453D1D /* LiveViewController.xib */; };
 		2AF618971AD9CF7900537E43 /* ChallengeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618951AD9CF7900537E43 /* ChallengeTableViewCell.m */; };
 		2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */; };
+		2AF6189D1AD9EA2400537E43 /* AstronautsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */; };
+		2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		2AF618941AD9CF7900537E43 /* ChallengeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChallengeTableViewCell.h; path = challengeCell/ChallengeTableViewCell.h; sourceTree = "<group>"; };
 		2AF618951AD9CF7900537E43 /* ChallengeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChallengeTableViewCell.m; path = challengeCell/ChallengeTableViewCell.m; sourceTree = "<group>"; };
 		2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChallengeTableViewCell.xib; path = challengeCell/ChallengeTableViewCell.xib; sourceTree = "<group>"; };
+		2AF6189A1AD9EA2400537E43 /* AstronautsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AstronautsTableViewCell.h; path = AstronautsCell/AstronautsTableViewCell.h; sourceTree = "<group>"; };
+		2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AstronautsTableViewCell.m; path = AstronautsCell/AstronautsTableViewCell.m; sourceTree = "<group>"; };
+		2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AstronautsTableViewCell.xib; path = AstronautsCell/AstronautsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +155,7 @@
 		2AD0C0071AD9A6A400453D1D /* Astronauts */ = {
 			isa = PBXGroup;
 			children = (
+				2AF618991AD9EA0100537E43 /* AstronautsCell */,
 				2AD0C0021AD9A69600453D1D /* AstronautsViewController.h */,
 				2AD0C0031AD9A69600453D1D /* AstronautsViewController.m */,
 				2AD0C0041AD9A69600453D1D /* AstronautsViewController.xib */,
@@ -206,6 +212,16 @@
 				2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */,
 			);
 			name = ChallengeCell;
+			sourceTree = "<group>";
+		};
+		2AF618991AD9EA0100537E43 /* AstronautsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2AF6189A1AD9EA2400537E43 /* AstronautsTableViewCell.h */,
+				2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */,
+				2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */,
+			);
+			name = AstronautsCell;
 			sourceTree = "<group>";
 		};
 		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
@@ -303,6 +319,7 @@
 				2AD0C0011AD9A65E00453D1D /* ProfileViewController.xib in Resources */,
 				2AD0C0061AD9A69600453D1D /* AstronautsViewController.xib in Resources */,
 				2AD0BFF71AD9A60700453D1D /* LoginViewController.xib in Resources */,
+				2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +344,7 @@
 				2AD0BFF61AD9A60700453D1D /* LoginViewController.m in Sources */,
 				2AD0C0051AD9A69600453D1D /* AstronautsViewController.m in Sources */,
 				2AD0C0001AD9A65E00453D1D /* ProfileViewController.m in Sources */,
+				2AF6189D1AD9EA2400537E43 /* AstronautsTableViewCell.m in Sources */,
 				2AD0C00E1AD9A73900453D1D /* LiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

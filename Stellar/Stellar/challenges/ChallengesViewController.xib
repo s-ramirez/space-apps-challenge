@@ -27,11 +27,6 @@
                         <action selector="toggleViews:" destination="-1" eventType="valueChanged" id="UHs-r9-ybm"/>
                     </connections>
                 </segmentedControl>
-                <view contentMode="scaleToFill" id="oHp-od-f8f">
-                    <rect key="frame" x="0.0" y="621" width="188" height="46"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.34791591030000002" blue="0.083260491620000002" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tTQ-Fh-f60">
                     <rect key="frame" x="0.0" y="133" width="375" height="488"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
