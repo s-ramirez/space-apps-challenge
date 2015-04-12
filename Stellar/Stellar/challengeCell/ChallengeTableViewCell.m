@@ -19,5 +19,10 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)playMedia:(id)sender {
+    if (_videoUrl) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_videoUrl]];
+    }
+}
 
 @end
