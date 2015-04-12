@@ -29,36 +29,38 @@
     [Parse setApplicationId:@"XcKF1osnd9lmHdNW0A3PCvinbCZeYnGb9l1vlT6R" clientKey:@"RgannDRVGc23n5623xB3YuniHI499UobSpPVnNRt"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    UIColor *navColor = [UIColor colorWithRed:243.0 green:232/255.0 blue:2/255.0 alpha:1];
+    UIColor *navColor = [UIColor colorWithRed:238.0 green:81/255.0 blue:51/255.0 alpha:1];
+    UIFont *navFont = [UIFont fontWithName:@"Moon" size:18.0f];
+
     NSDictionary *navStyle = @{
-                               NSForegroundColorAttributeName: [UIColor blackColor]
-//                               ,NSFontAttributeName: [UIFont fontWithName:@"BebasNeue" size:22.0f]
+                               NSForegroundColorAttributeName: [UIColor whiteColor]
+                               ,NSFontAttributeName: navFont
                                };
     
     UIViewController *liveVC = [[LiveViewController alloc] initWithNibName:@"LiveViewController" bundle:nil];
     UINavigationController *liveNavController = [[UINavigationController alloc] initWithRootViewController:liveVC];
     [liveNavController.navigationBar setBarTintColor: navColor];
     liveNavController.navigationBar.titleTextAttributes =  navStyle;
-    liveNavController.navigationBar.tintColor = [UIColor blackColor];
+    liveNavController.navigationBar.tintColor = [UIColor whiteColor];
     
     UIViewController *challengesVC = [[ChallengesViewController alloc] initWithNibName:@"ChallengesViewController" bundle:nil];
     UINavigationController *challengesNavController = [[UINavigationController alloc] initWithRootViewController:challengesVC];
     [challengesNavController.navigationBar setBarTintColor: navColor];
     challengesNavController.navigationBar.titleTextAttributes =  navStyle;
-    challengesNavController.navigationBar.tintColor = [UIColor blackColor];
+    challengesNavController.navigationBar.tintColor = [UIColor whiteColor];
     
     UIViewController *profileVC = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
     UINavigationController *profileNavControler = [[UINavigationController alloc] initWithRootViewController:profileVC];
     [profileNavControler.navigationBar setBarTintColor: navColor];
     profileNavControler.navigationBar.titleTextAttributes =  navStyle;
-    profileNavControler.navigationBar.tintColor = [UIColor blackColor];
+    profileNavControler.navigationBar.tintColor = [UIColor whiteColor];
     
     
     UIViewController *astronautsVC = [[AstronautsViewController alloc] initWithNibName:@"AstronautsViewController" bundle:nil];
     UINavigationController *astronautsNavControler = [[UINavigationController alloc] initWithRootViewController:astronautsVC];
     [astronautsNavControler.navigationBar setBarTintColor: navColor];
     astronautsNavControler.navigationBar.titleTextAttributes =  navStyle;
-    astronautsNavControler.navigationBar.tintColor = [UIColor blackColor];
+    astronautsNavControler.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects: challengesNavController, astronautsNavControler, liveNavController, profileNavControler, nil];
@@ -68,7 +70,9 @@
                                                        titleHighlightedColor, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateHighlighted];
     
-    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
+    [[UITabBar appearance] setTintColor:navColor];
+    
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     
@@ -123,6 +127,10 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
