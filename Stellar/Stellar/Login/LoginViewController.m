@@ -68,14 +68,14 @@
             NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
             
             NSString *idUser  = currentUser.objectId;
-            
+            birthday = birthday? birthday:@"";
             currentUser[@"pictureUrl"] = pictureURL.absoluteString;
             currentUser[@"points"] = @0;
-            currentUser[@"birthday"] = birthday;
-            currentUser[@"gender"] = gender;
+            currentUser[@"birthday"] = birthday? birthday:@"";
+            currentUser[@"gender"] = gender ? gender:@"";
             currentUser[@"email"] = email;
             currentUser[@"name"] = name;
-            currentUser[@"location"] = location;
+            currentUser[@"location"] = location ? location:@"";
             
             [currentUser saveInBackground];
             
