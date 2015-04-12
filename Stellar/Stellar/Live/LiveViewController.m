@@ -80,7 +80,7 @@
     [self.containerView addSubview:self.galleryContainerView];
     [self.containerView addSubview:self.stationContainerView];
     [self.containerView addSubview:self.streamingWebview];
-
+    
     
     self.galleryContainerView.hidden = NO;
     self.stationContainerView.hidden = YES;
@@ -136,13 +136,13 @@
 {
     if (!_collectionView) {
         GLGooglePlusLikeLayout* layout = [[GLGooglePlusLikeLayout alloc] init];
-        CGFloat width = floorf((CGRectGetWidth(self.view.bounds) / 2));
+        CGFloat width = floorf((CGRectGetWidth(self.containerView.bounds) / 2));
         layout.minimumItemSize = CGSizeMake(width, width);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:self.containerView.bounds collectionViewLayout:layout];
         [_collectionView setDelegate:self];
         [_collectionView setDataSource:self];
-//        _collectionView.backgroundColor = [UIColor colorWithWhite:0.85f alpha:1.0f];
+        //        _collectionView.backgroundColor = [UIColor colorWithWhite:0.85f alpha:1.0f];
         _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
     }
@@ -195,7 +195,7 @@
     
     // setup infinite scrolling
     [self.collectionView addInfiniteScrollingWithActionHandler:^{
-
+        
         NSUInteger dataSourceCount = weakSelf.dataSource.count;
         NSMutableArray* tmp = [[NSMutableArray alloc] initWithCapacity:DATA_TO_ADD];
         NSMutableArray* indexPaths = [[NSMutableArray alloc] initWithCapacity:DATA_TO_ADD];
@@ -218,13 +218,13 @@
             [tmp addObject:weakSelf.arrayImageSize[i]];
             [indexPaths addObject:[NSIndexPath indexPathForItem:(dataSourceCount + i) inSection:0]];
         }
-
+        
         int64_t delayInSeconds = 2.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [weakSelf.dataSource addObjectsFromArray:tmp];
             [weakSelf.collectionView performBatchUpdates:^{
-            [weakSelf.collectionView insertItemsAtIndexPaths:(NSArray*)indexPaths];
+                [weakSelf.collectionView insertItemsAtIndexPaths:(NSArray*)indexPaths];
                 
             } completion:nil];
             [weakSelf.collectionView.infiniteScrollingView stopAnimating];
