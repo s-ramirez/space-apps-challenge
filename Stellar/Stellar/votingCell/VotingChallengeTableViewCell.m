@@ -8,7 +8,9 @@
 
 #import "VotingChallengeTableViewCell.h"
 
-@implementation VotingChallengeTableViewCell
+@implementation VotingChallengeTableViewCell {
+    BOOL isSelected;
+}
 
 - (void)awakeFromNib {
     // Initialization code
@@ -21,5 +23,18 @@
 }
 
 - (IBAction)vote:(id)sender {
+    int totalVotes = [_votesLabel.text intValue];
+    UIImage *btnImage;
+    if(isSelected){
+        totalVotes -= 1;
+        btnImage = [UIImage imageNamed:@"first"];
+    }
+    else {
+        totalVotes += 1;
+        btnImage = [UIImage imageNamed:@"second"];
+    }
+    _votesLabel.text = [NSString stringWithFormat:@"%d", totalVotes];
+    isSelected = !isSelected;
+    [_voteBtn setImage:btnImage forState:UIControlStateNormal];
 }
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -34,34 +34,36 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder_profile" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-HY-eMP">
                         <rect key="frame" x="0.0" y="-1" width="216" height="168"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-yz-bAW">
-                        <rect key="frame" x="274" y="8" width="46" height="46"/>
-                        <color key="backgroundColor" red="0.86161375969999998" green="0.86052053319999999" blue="0.87961647730000003" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="Vote">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="vote:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kJx-VN-KMU"/>
-                        </connections>
-                    </button>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBF-cE-ckq">
                         <rect key="frame" x="218" y="107" width="150" height="66"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-yz-bAW">
+                        <rect key="frame" x="277" y="8" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.86161375969999998" green="0.86052053319999999" blue="0.87961647730000003" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
+                        <state key="normal" image="first">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="vote:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kJx-VN-KMU"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="challengeImageView" destination="NX6-HY-eMP" id="sUc-Tb-feq"/>
                 <outlet property="descriptionTextView" destination="zBF-cE-ckq" id="J22-Gk-lj1"/>
                 <outlet property="titleLabel" destination="rM6-fF-M0j" id="Uni-bZ-Rwc"/>
+                <outlet property="voteBtn" destination="tyG-yz-bAW" id="lsI-iA-xIJ"/>
                 <outlet property="votesLabel" destination="oUS-vo-PBm" id="wbr-4K-tWd"/>
             </connections>
             <point key="canvasLocation" x="485.5" y="174.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="placeholder_profile" width="1840" height="1568"/>
     </resources>
 </document>

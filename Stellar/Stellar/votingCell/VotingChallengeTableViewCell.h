@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VotingChallengeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *voteBtn;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *votesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *challengeImageView;
