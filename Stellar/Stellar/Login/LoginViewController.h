@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<MBProgressHUDDelegate>
+
+- (IBAction)loginButtonTouchHandler:(id)sender;
+
 
 @end

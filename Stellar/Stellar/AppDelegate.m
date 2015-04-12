@@ -7,11 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "LoginViewController.h"
 #import "ChallengesViewController.h"
 #import "ProfileViewController.h"
 #import "AstronautsViewController.h"
 #import "LiveViewController.h"
+#import "APIManager.h"
 
 @interface AppDelegate ()
 
@@ -69,13 +72,24 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    NSLog(@"Verifyng session ****");
+    [Parse setApplicationId:@"XcKF1osnd9lmHdNW0A3PCvinbCZeYnGb9l1vlT6R" clientKey:@"RgannDRVGc23n5623xB3YuniHI499UobSpPVnNRt"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    if (true) {//Check if user is logged
-        NSLog(@"Ready session ****");
+    [PFFacebookUtils initializeFacebook];
+    
+    NSLog(@"Verifyng session ****");
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        NSLog(@"Ready session **** %@", [PFUser currentUser]);
         [self.window setRootViewController:self.tabBarController];
+        NSData* currentUserData = [prefs objectForKey:@"sessionKey"];
+        Client *currentUser = [NSKeyedUnarchiver unarchiveObjectWithData:currentUserData];
+        [[APIManager sharedManager] setSharedUser:currentUser];
     }else{
         NSLog(@"Login session ****");
+        [prefs setObject:nil forKey:@"sessionKey"];
+        [prefs synchronize];
+        
         self.window.rootViewController = loginViewController;
     }
     
@@ -99,11 +113,16 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
 }
 
 @end
