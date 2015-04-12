@@ -49,6 +49,14 @@
     int points = [(NSString *)currentUser[@"points"] intValue];
     int rankPos = (points/100)<ranks.count?(points/100):(int)ranks.count-1;
     _rankLabel.text = ranks[rankPos];
+    NSString *imageUrl = currentUser[@"pictureUrl"];
+    if (imageUrl) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            _userImage.image = [UIImage imageWithData:imageData];
+        });
+    }
+
 }
 
 -(void)dismissKeyboard {
@@ -73,7 +81,6 @@
     hudProgress = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:hudProgress];
     hudProgress.labelText = message;
-//    hudProgress.delegate = self;
     [hudProgress show:YES];
 }
 

@@ -33,7 +33,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="84" y="527" width="207" height="32"/>
+                        <rect key="frame" x="51" y="545" width="273" height="42"/>
                     </variation>
                     <connections>
                         <action selector="loginButtonTouchHandler:" destination="-1" eventType="touchUpInside" id="Nh1-V4-upB"/>
