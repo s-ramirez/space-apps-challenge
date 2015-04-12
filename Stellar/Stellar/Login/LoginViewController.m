@@ -63,6 +63,7 @@
             NSString *email = userData[@"email"];
             NSString *gender = userData[@"gender"];
             NSString *birthday = userData[@"birthday"];
+            NSString *location = userData[@"location"][@"name"];
             
             NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
             
@@ -70,6 +71,12 @@
             
             currentUser[@"pictureUrl"] = pictureURL.absoluteString;
             currentUser[@"points"] = @0;
+            currentUser[@"birthday"] = birthday;
+            currentUser[@"gender"] = gender;
+            currentUser[@"email"] = email;
+            currentUser[@"name"] = name;
+            currentUser[@"location"] = location;
+            
             [currentUser saveInBackground];
             
             client = [[Client alloc]initClient:facebookID idUser:idUser name:name email:email birthday:birthday gender:gender pictureUrl:pictureURL];
