@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LiveViewController : UIViewController <UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *buttonNearLocation;
 
+- (IBAction)actionNearLocation:(id)sender;
 @end

@@ -42,6 +42,7 @@
 
 @implementation LiveViewController {
     FlickrRequest *flickrRequest;
+    BOOL isSelected;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -77,18 +78,16 @@
     NSString* urlStation = @"http://app.friendsinspace.org/";
     NSURL* nsUrlStation = [NSURL URLWithString:urlStation];
     NSURLRequest* requestStation = [NSURLRequest requestWithURL:nsUrlStation cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
-    
-    
     [self.stationWebView loadRequest:requestStation];
     
     [self.containerView addSubview:self.galleryContainerView];
     [self.containerView addSubview:self.stationContainerView];
-    [self.containerView addSubview:self.streamingWebview];
+    [self.containerView addSubview:self.streamingContainerView];
     
     
     self.galleryContainerView.hidden = NO;
     self.stationContainerView.hidden = YES;
-    self.streamingWebview.hidden = YES;
+    self.streamingContainerView.hidden = YES;
     
     // configure views
     //GLGooglePlusLikeLayout *layout = (GLGooglePlusLikeLayout *)[self.collectionView collectionViewLayout];
@@ -113,17 +112,17 @@
         //toggle the correct view to be visible
         self.galleryContainerView.hidden = NO;
         self.stationContainerView.hidden = YES;
-        self.streamingWebview.hidden = YES;
+        self.streamingContainerView.hidden = YES;
     }
     else if (selectedSegment == 1) {
         //toggle the correct view to be visible
         self.galleryContainerView.hidden = YES;
         self.stationContainerView.hidden = NO;
-        self.streamingWebview.hidden = YES;
+        self.streamingContainerView.hidden = YES;
     } else {
         self.galleryContainerView.hidden = YES;
         self.stationContainerView.hidden = YES;
-        self.streamingWebview.hidden = NO;
+        self.streamingContainerView.hidden = NO;
     }
 }
 
@@ -343,6 +342,18 @@
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script11];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script12];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script13];
+}
+
+- (IBAction)actionNearLocation:(id)sender {
+    UIImage *btnImage;
+    if(isSelected){
+        btnImage = [UIImage imageNamed:@"buttonNearLocation"];
+    }
+    else {
+        btnImage = [UIImage imageNamed:@"buttonNearLocationPressed"];
+    }
+    isSelected = !isSelected;
+    [_buttonNearLocation setImage:btnImage forState:UIControlStateNormal];
 }
 
 @end

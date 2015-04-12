@@ -58,7 +58,6 @@
                    @"format":@"json",
                    @"nojsoncallback":@"1"}
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"Array %@", responseObject);
          NSArray *photos = [[responseObject objectForKey:@"photos"] objectForKey:@"photo"];
          for (NSDictionary *photo in photos) {
              NSString *title = [photo objectForKey:@"title"];

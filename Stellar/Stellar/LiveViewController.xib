@@ -6,12 +6,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LiveViewController">
             <connections>
+                <outlet property="buttonNearLocation" destination="ehn-XB-hzu" id="NRv-3p-JCt"/>
                 <outlet property="containerView" destination="ibq-Da-mnY" id="duf-cc-kdr"/>
                 <outlet property="galleryContainerView" destination="yBl-LU-O2q" id="bDS-gs-USg"/>
                 <outlet property="stationContainerView" destination="6cW-yI-sXE" id="RMb-KP-ueS"/>
                 <outlet property="stationWebView" destination="R6P-Ey-aAF" id="Ica-fe-6Vt"/>
-                <outlet property="streamingContainerView" destination="Owa-2a-Sgg" id="dVi-Cb-bFQ"/>
-                <outlet property="streamingWebview" destination="esW-lY-TZp" id="hKt-ge-Y4j"/>
+                <outlet property="streamingContainerView" destination="8Dc-P3-IjU" id="RPs-3i-Xxe"/>
+                <outlet property="streamingWebview" destination="JmN-5U-Dpn" id="Ul7-Rb-mLi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0Ad-qx-E6a"/>
             </connections>
         </placeholder>
@@ -22,8 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" id="ibq-Da-mnY">
                     <rect key="frame" x="0.0" y="104" width="375" height="513"/>
-		    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.98823529409999999" green="0.68627450980000004" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="yX5-ww-7Tf">
                     <rect key="frame" x="8" y="69" width="359" height="29"/>
@@ -54,30 +54,70 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" id="R6P-Ey-aAF">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="358"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </webView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gvi-6b-tm5">
+                    <rect key="frame" x="248" y="394" width="89" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17.200000762939453"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.4392156862745098" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17,500 mph" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XL7-1O-lpD">
+                    <rect key="frame" x="27" y="394" width="98" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17.200000762939453"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.4392156862745098" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed of the ISS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xqe-6m-Y6O">
+                    <rect key="frame" x="38" y="414" width="77" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.4392156862745098" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time spent to orbit the earth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JbF-GW-kBW">
+                    <rect key="frame" x="219" y="414" width="147" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.4392156862745098" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ehn-XB-hzu">
+                    <rect key="frame" x="123" y="421.5" width="106" height="81.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="buttonNearLocation">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionNearLocation:" destination="-1" eventType="touchUpInside" id="02Y-QA-eW0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="325.5" y="953.5"/>
         </view>
-        <view contentMode="scaleToFill" id="Owa-2a-Sgg">
+        <view contentMode="scaleToFill" id="8Dc-P3-IjU">
             <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" id="esW-lY-TZp">
+                <webView contentMode="scaleToFill" id="JmN-5U-Dpn">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </webView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="786.5" y="953.5"/>
+            <point key="canvasLocation" x="796.5" y="953.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="buttonNearLocation" width="75" height="75"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
