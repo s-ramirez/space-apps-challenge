@@ -29,6 +29,7 @@
 		2AF618B51ADA59DE00537E43 /* VotingChallengeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */; };
 		2AF618B61ADA59DE00537E43 /* VotingChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */; };
 		720121BA1ADA59C30018D659 /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720121B91ADA59C30018D659 /* LiveViewController.xib */; };
+		725205C81ADAC99800BD4675 /* MoonBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 725205C71ADAC8A000BD4675 /* MoonBold.otf */; };
 		725330381ADA7D0C004E3FB0 /* PhotoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 725330371ADA7D0C004E3FB0 /* PhotoDetail.m */; };
 		725C5C151ADA725F00C543D4 /* DetailPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725C5C131ADA725F00C543D4 /* DetailPhotoViewController.m */; };
 		725C5C161ADA725F00C543D4 /* DetailPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725C5C141ADA725F00C543D4 /* DetailPhotoViewController.xib */; };
@@ -130,6 +131,7 @@
 		2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingChallengeTableViewCell.m; path = votingCell/VotingChallengeTableViewCell.m; sourceTree = "<group>"; };
 		2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VotingChallengeTableViewCell.xib; path = votingCell/VotingChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		720121B91ADA59C30018D659 /* LiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveViewController.xib; sourceTree = "<group>"; };
+		725205C71ADAC8A000BD4675 /* MoonBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MoonBold.otf; sourceTree = "<group>"; };
 		725330361ADA7D0C004E3FB0 /* PhotoDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetail.h; sourceTree = "<group>"; };
 		725330371ADA7D0C004E3FB0 /* PhotoDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetail.m; sourceTree = "<group>"; };
 		725C5C121ADA725F00C543D4 /* DetailPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPhotoViewController.h; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		2AD0BFC91AD9A38200453D1D /* Stellar */ = {
 			isa = PBXGroup;
 			children = (
+				721C45021ADAC4A400642513 /* Font */,
 				2AD0BFCE1AD9A38200453D1D /* AppDelegate.h */,
 				2AD0BFCF1AD9A38200453D1D /* AppDelegate.m */,
 				2AD0BFDA1AD9A38200453D1D /* Images.xcassets */,
@@ -417,6 +420,14 @@
 				2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */,
 			);
 			name = VotingCell;
+			sourceTree = "<group>";
+		};
+		721C45021ADAC4A400642513 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				725205C71ADAC8A000BD4675 /* MoonBold.otf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		725330391ADA7F23004E3FB0 /* Detail */ = {
@@ -690,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725205C81ADAC99800BD4675 /* MoonBold.otf in Resources */,
 				725C5C161ADA725F00C543D4 /* DetailPhotoViewController.xib in Resources */,
 				2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */,
 				720121BA1ADA59C30018D659 /* LiveViewController.xib in Resources */,
