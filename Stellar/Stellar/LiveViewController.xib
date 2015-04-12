@@ -33,6 +33,7 @@
                         <segment title="Station"/>
                         <segment title="Streaming"/>
                     </segments>
+                    <color key="tintColor" red="0.30196078430000001" green="0.43921568630000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="toggleViews:" destination="-1" eventType="valueChanged" id="Re1-NP-vaj"/>
                     </connections>
