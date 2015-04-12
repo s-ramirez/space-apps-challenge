@@ -44,7 +44,7 @@
 {
     if (![_displayString isEqualToString:displayString]) {
         _displayString = [displayString copy];
-        self.displayLabel.text = _displayString;
+        //self.displayLabel.text = _displayString;
     }
 }
 
@@ -69,9 +69,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         [self.contentView addSubview:self.displayPhoto];
-        [self.contentView addSubview:self.displayLabel];
     }
     return self;
 }

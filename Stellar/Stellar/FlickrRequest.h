@@ -17,6 +17,7 @@
 @interface FlickrRequest : NSObject
 
 @property (nonatomic, strong) NSMutableArray* arrayUrlImages;
+@property (nonatomic, strong) NSMutableArray* arrayTitles;
 @property (nonatomic, weak) id <FlickerRequestDelegate> delegate;
 -(void) createRequest;
 

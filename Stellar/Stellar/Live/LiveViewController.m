@@ -7,22 +7,25 @@
 //
 
 #import "LiveViewController.h"
+#import "DetailPhotoViewController.h"
 #import "SVPullToRefresh.h"
 #import "GLGooglePlusLikeLayout.h"
 #import "UIImageView+WebCache.h"
 #import "GLSectionView.h"
 #import "GLCell.h"
 #import "FlickrRequest.h"
+#import "PhotoDetail.h"
 
 #define DATA_TO_ADD 40
 #define SECTION_IDENTIFIER @"section"
 #define CELL_IDENTIFIER @"cell"
 
-@interface LiveViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, FlickerRequestDelegate>
+@interface LiveViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, FlickerRequestDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray* arrayImageSize;
 @property (nonatomic, strong) NSMutableArray* arrayUrlImages;
+@property (nonatomic, strong) NSMutableArray* arrayTitles;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (weak, nonatomic) IBOutlet UIView *galleryContainerView;
@@ -58,6 +61,7 @@
     [flickrRequest createRequest];
     
     _arrayUrlImages = [[NSMutableArray alloc]init];
+    _arrayTitles = [[NSMutableArray alloc]init];
     _arrayImageSize = [[NSMutableArray alloc]init];
     
     _stationWebView.delegate = self;
@@ -87,8 +91,8 @@
     self.streamingWebview.hidden = YES;
     
     // configure views
-    GLGooglePlusLikeLayout *layout = (GLGooglePlusLikeLayout *)[self.collectionView collectionViewLayout];
-    [layout setHasHeaders:NO];
+    //GLGooglePlusLikeLayout *layout = (GLGooglePlusLikeLayout *)[self.collectionView collectionViewLayout];
+    //[layout setHasHeaders:NO];
     
     [self.collectionView registerClass:[GLSectionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SECTION_IDENTIFIER];
     [self.collectionView registerClass:[GLCell class] forCellWithReuseIdentifier:CELL_IDENTIFIER];
@@ -157,15 +161,13 @@
     return _dataSource;
 }
 
-- (void)updateLayout
-{
+- (void)updateLayout {
     GLGooglePlusLikeLayout *layout = (GLGooglePlusLikeLayout *)[self.collectionView collectionViewLayout];
     CGFloat width = floorf((CGRectGetWidth(self.containerView.bounds) / 2));
     layout.minimumItemSize = CGSizeMake(width, width);
 }
 
-- (CGSize)randomSize
-{
+- (CGSize)randomSize {
     CGFloat width = (CGFloat) (arc4random() % (int) self.view.bounds.size.width * 0.7);
     CGFloat heigth = (CGFloat) (arc4random() % (int) self.view.bounds.size.height * 0.7);
     CGSize randomSize = CGSizeMake(width, heigth);
@@ -224,8 +226,7 @@
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [weakSelf.dataSource addObjectsFromArray:tmp];
             [weakSelf.collectionView performBatchUpdates:^{
-                [weakSelf.collectionView insertItemsAtIndexPaths:(NSArray*)indexPaths];
-                
+            [weakSelf.collectionView insertItemsAtIndexPaths:(NSArray*)indexPaths];
             } completion:nil];
             [weakSelf.collectionView.infiniteScrollingView stopAnimating];
         });
@@ -254,12 +255,37 @@
         if (imageUrl) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [cell.displayPhoto sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
+                cell.displayString = [_arrayTitles objectAtIndex:indexPath.row];
                 CGSize size = CGSizeMake(cell.displayPhoto.frame.size.width, cell.displayPhoto.frame.size.height);
                 [_arrayImageSize addObject:[NSValue valueWithCGSize:size]];
+                
+                UITapGestureRecognizer *bioTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+                bioTap.delegate = self;
+                // make your gesture recognizer priority
+                bioTap.delaysTouchesBegan = YES;
+                bioTap.numberOfTapsRequired = 1;
+                [cell addGestureRecognizer:bioTap];
             });
         }
     }
     return cell;
+}
+
+-(void)handleTap:(UITapGestureRecognizer*)sender {
+    NSLog(@"Tap");
+    GLCell *cell = (GLCell*)sender.view;
+    UIImage* imageView = cell.displayPhoto.image;
+    NSString* title = cell.displayString;
+    NSLog(@"Title %@", title);
+    
+    PhotoDetail* photoDetail = [[PhotoDetail alloc]init];
+    photoDetail.title = title;
+    photoDetail.photo = imageView;
+    
+    DetailPhotoViewController* detail = [[DetailPhotoViewController alloc]init];
+    detail.photoDetail = photoDetail;
+    [self presentViewController:detail animated:YES completion:nil];
+    //[self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -274,8 +300,6 @@
     return size;
 }
 
-
-
 #pragma mark -
 #pragma mark - Private methods
 - (void)commonInit {
@@ -284,6 +308,7 @@
 
 - (NSMutableArray*)finishDownloadImages {
     _arrayUrlImages = flickrRequest.arrayUrlImages;
+    _arrayTitles = flickrRequest.arrayTitles;
     [self.collectionView reloadData];
     [self configurePullToRefresh];
     [self.collectionView triggerPullToRefresh];
@@ -301,6 +326,10 @@
     NSString *script7 = @"document.getElementsByClassName(\"fis-logo\")[0].style.display = 'none';";
     NSString *script8 = @"document.getElementById(\"fis-show-map\").click();";
     NSString *script9 = @"document.getElementsByClassName(\"fis-online-map-controls\")[0].style.display = 'none';";
+    NSString *script10 = @"document.getElementsByClassName(\"sam-profile sam-image\")[0].style.display = 'none';";
+    NSString *script11 = @"document.getElementsByClassName(\"sam-data\")[0].style.display = 'none';";
+    NSString *script12 = @"document.getElementsByClassName(\"sam-actions\")[0].style.display = 'none';";
+    NSString *script13 = @"document.getElementsByClassName(\"fis-greeting-controls\")[0].style.display = 'none';";
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script2];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script3];
@@ -310,6 +339,10 @@
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script7];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script8];
     [self.stationWebView stringByEvaluatingJavaScriptFromString:script9];
+    [self.stationWebView stringByEvaluatingJavaScriptFromString:script10];
+    [self.stationWebView stringByEvaluatingJavaScriptFromString:script11];
+    [self.stationWebView stringByEvaluatingJavaScriptFromString:script12];
+    [self.stationWebView stringByEvaluatingJavaScriptFromString:script13];
 }
 
 @end
