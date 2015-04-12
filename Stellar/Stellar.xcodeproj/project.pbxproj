@@ -223,6 +223,7 @@
 		B7915BD71ADA6DC600C31BCD /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
 		B7915BD81ADA6DC600C31BCD /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
 		B7915BD91ADA6DC600C31BCD /* CreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		B7915BDC1ADA917F00C31BCD /* AstronautDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AstronautDelegate.h; path = AstronautsCell/AstronautDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +394,7 @@
 				2AF6189A1AD9EA2400537E43 /* AstronautsTableViewCell.h */,
 				2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */,
 				2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */,
+				B7915BDC1ADA917F00C31BCD /* AstronautDelegate.h */,
 			);
 			name = AstronautsCell;
 			sourceTree = "<group>";

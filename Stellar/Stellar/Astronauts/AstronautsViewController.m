@@ -70,6 +70,8 @@
         PFObject *astronaut = [astronauts objectAtIndex:indexPath.section];
         cell.title.text = astronaut[@"name"];
         cell.subLabel.text = astronaut[@"bio"];
+        cell.astronautId = astronaut[@"objectId"];
+        
         NSString *imageUrl = astronaut[@"pictureUrl"];
         
         if(imageUrl) {

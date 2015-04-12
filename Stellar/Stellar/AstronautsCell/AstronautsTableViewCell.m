@@ -8,7 +8,9 @@
 
 #import "AstronautsTableViewCell.h"
 
-@implementation AstronautsTableViewCell
+@implementation AstronautsTableViewCell {
+    BOOL isSelected;
+}
 
 - (void)awakeFromNib {
     // Initialization code
@@ -16,8 +18,18 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
+- (IBAction)subscribe:(id)sender {
+    UIImage *btnImage;
+    
+    if(isSelected){
+        btnImage = [UIImage imageNamed:@"first"];
+    }
+    else {
+        btnImage = [UIImage imageNamed:@"second"];
+    }
+    isSelected = !isSelected;
+    [self.subscribeBtn setImage:btnImage forState:UIControlStateNormal];
+}
 @end
