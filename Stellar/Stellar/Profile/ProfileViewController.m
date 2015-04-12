@@ -34,7 +34,7 @@
     if (self) {
         // Custom initialization
         self.title = NSLocalizedString(@"Profile", @"Profile");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.tabBarItem.image = [UIImage imageNamed:@"profile"];
     }
     return self;
 }
@@ -83,11 +83,8 @@
          }];
         
     });
-
     
-   
-    
-    NSArray *images = [NSArray arrayWithObjects: @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", nil];
+    NSArray *images = [NSArray arrayWithObjects: @"badge-0", @"badge-1", @"badge-2", @"badge-3", @"badge-4", @"badge-0", @"badge-1", @"badge-2", @"badge-3", @"badge-4", nil];
     [self loadImagesScrollView:images];
     _badgesScrollview.showsHorizontalScrollIndicator = false;
 }
@@ -131,7 +128,7 @@
 //    }
 //
 
-    float customWidth = _badgesScrollview.bounds.size.height;
+    float customWidth = 50;
     for (int i = 0; i < arrayImages.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*customWidth+(10 * i - 1), 0, customWidth, _badgesScrollview.bounds.size.height)];
         

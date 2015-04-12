@@ -29,7 +29,7 @@
         astronauts = [[NSMutableArray alloc] init];
         [self fetchAstronauts];
         self.title = NSLocalizedString(@"Astronauts", @"Astronauts");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"astronauts"];
     }
     return self;
 }

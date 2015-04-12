@@ -30,7 +30,7 @@
     if (self) {
         // Custom initialization
         self.title = NSLocalizedString(@"Challenges", @"Challenges");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"challenges"];
         voteChallenges = [[NSMutableArray alloc] init];
         winningChallenges = [[NSMutableArray alloc] init];
         [self fetchChallenges];

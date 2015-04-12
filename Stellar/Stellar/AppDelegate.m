@@ -61,7 +61,7 @@
     astronautsNavControler.navigationBar.tintColor = [UIColor blackColor];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:liveNavController, challengesNavController, profileNavControler, astronautsNavControler, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects: challengesNavController, astronautsNavControler, liveNavController, profileNavControler, nil];
     
     UIColor *titleHighlightedColor = [UIColor colorWithRed:153/255.0 green:192/255.0 blue:48/255.0 alpha:1.0];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
