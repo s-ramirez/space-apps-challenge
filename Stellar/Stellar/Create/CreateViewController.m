@@ -29,6 +29,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
     _userImage.layer.cornerRadius = 33;//Half of the height
     _userImage.layer.masksToBounds = YES;
     _userImage.contentMode = UIViewContentModeScaleAspectFill;
@@ -45,6 +51,11 @@
     _rankLabel.text = ranks[rankPos];
 }
 
+-(void)dismissKeyboard {
+    [_challengeDescription resignFirstResponder];
+    [_challengeTitle resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -54,8 +65,18 @@
 - (void) startLoader{
     hudProgress = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:hudProgress];
+    
+    [self startLoaderWithText:@"Uploading image..."];
+}
+
+-(void)startLoaderWithText:(NSString *)message{
+    hudProgress = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hudProgress];
+    hudProgress.labelText = message;
+//    hudProgress.delegate = self;
     [hudProgress show:YES];
 }
+
 
 - (IBAction)pickImage:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
