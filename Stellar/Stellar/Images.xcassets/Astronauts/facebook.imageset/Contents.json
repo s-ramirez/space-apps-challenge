@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Profile_ astronaut.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "Astronauts 3.png"
     },
     {
       "idiom" : "universal",

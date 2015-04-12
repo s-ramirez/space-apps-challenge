@@ -24,10 +24,10 @@
     UIImage *btnImage;
     
     if(isSelected){
-        btnImage = [UIImage imageNamed:@"first"];
+        btnImage = [UIImage imageNamed:@"subscribe"];
     }
     else {
-        btnImage = [UIImage imageNamed:@"second"];
+        btnImage = [UIImage imageNamed:@"subscribe"];
     }
     isSelected = !isSelected;
     [self.subscribeBtn setImage:btnImage forState:UIControlStateNormal];

@@ -28,6 +28,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_profile" id="Q4v-cb-P6x">
                     <rect key="frame" x="82" y="111" width="212" height="212"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.90980392160000001" green="0.94509803920000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samantha Cristoforetti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ule-2p-nbg">
                     <rect key="frame" x="8" y="345" width="359" height="32"/>
@@ -89,7 +90,7 @@
         </view>
     </objects>
     <resources>
-        <image name="placeholder_profile" width="1840" height="1568"/>
+        <image name="placeholder_profile" width="253" height="227"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

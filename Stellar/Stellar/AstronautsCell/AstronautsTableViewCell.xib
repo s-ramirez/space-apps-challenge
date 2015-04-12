@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="AstronautsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="AstronautsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSJ-Er-LSw">
-                        <rect key="frame" x="0.0" y="0.0" width="117" height="150"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-d6-TXU">
+                        <rect key="frame" x="59" y="6" width="322" height="105"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUh-MS-2dv">
+                                <rect key="frame" x="89" y="80" width="29" height="22"/>
+                                <state key="normal" image="facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXF-Lt-7xS">
+                                <rect key="frame" x="63" y="78" width="16" height="22"/>
+                                <state key="normal" image="share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d37-7B-aZ5">
+                                <rect key="frame" x="128" y="76" width="19" height="28"/>
+                                <state key="normal" image="twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AstroCell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-WN-PdO">
+                                <rect key="frame" x="61" y="8" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet " lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvD-gC-emC">
+                                <rect key="frame" x="61" y="29" width="248" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncX-AP-gos">
+                                <rect key="frame" x="231" y="11" width="84" height="15"/>
+                                <state key="normal" image="subscribe">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="subscribe:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="L1R-0Y-WCa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder_profile" translatesAutoresizingMaskIntoConstraints="NO" id="PSJ-Er-LSw">
+                        <rect key="frame" x="6" y="5" width="106" height="106"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.94509803920000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvD-gC-emC">
-                        <rect key="frame" x="125" y="43" width="191" height="99"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AstroCell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-WN-PdO">
-                        <rect key="frame" x="125" y="14" width="191" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncX-AP-gos">
-                        <rect key="frame" x="319" y="24" width="33" height="35"/>
-                        <state key="normal" image="first">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="subscribe:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="L1R-0Y-WCa"/>
-                        </connections>
-                    </button>
                 </subviews>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.86161375969999998" green="0.86052053319999999" blue="0.87961647730000003" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="mainImage" destination="PSJ-Er-LSw" id="0Jr-nb-Wvb"/>
                 <outlet property="subLabel" destination="NvD-gC-emC" id="YcP-eS-hip"/>
                 <outlet property="subscribeBtn" destination="ncX-AP-gos" id="HHl-Jn-X7X"/>
                 <outlet property="title" destination="cyb-WN-PdO" id="y9g-cy-4eh"/>
             </connections>
-            <point key="canvasLocation" x="-16.5" y="431"/>
+            <point key="canvasLocation" x="-256.5" y="443"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="facebook" width="18" height="18"/>
+        <image name="placeholder_profile" width="253" height="227"/>
+        <image name="share" width="16" height="21"/>
+        <image name="subscribe" width="115" height="20"/>
+        <image name="twitter" width="20" height="16"/>
     </resources>
 </document>

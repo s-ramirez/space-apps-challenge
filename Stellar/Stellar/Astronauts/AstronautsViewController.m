@@ -37,6 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.astronautsTableView.contentInset = UIEdgeInsetsMake(-20, 0, -20, 0);
+    self.astronautsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -71,6 +72,9 @@
         cell.title.text = astronaut[@"name"];
         cell.subLabel.text = astronaut[@"bio"];
         cell.astronautId = astronaut[@"objectId"];
+        cell.mainImage.layer.cornerRadius = 53;//Half of the height
+        cell.mainImage.layer.masksToBounds = YES;
+        cell.mainImage.contentMode = UIViewContentModeScaleAspectFill;
         
         NSString *imageUrl = astronaut[@"pictureUrl"];
         
@@ -90,7 +94,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150.0f;
+    return 116.0f;
 }
 
 //Fetch all astronauts from Parse platform
