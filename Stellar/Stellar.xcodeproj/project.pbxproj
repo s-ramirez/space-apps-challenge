@@ -42,6 +42,8 @@
 		B7364CE51AD9DDA1006F84ED /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7364CE41AD9DDA1006F84ED /* MBProgressHUD.m */; };
 		B7364CE91AD9E309006F84ED /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = B7364CE81AD9E309006F84ED /* Client.m */; };
 		B7364CED1AD9E4A9006F84ED /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7364CEC1AD9E4A9006F84ED /* APIManager.m */; };
+		B7915BD41ADA43AF00C31BCD /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7915BD21ADA43AF00C31BCD /* CreateViewController.m */; };
+		B7915BD51ADA43AF00C31BCD /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7915BD31ADA43AF00C31BCD /* CreateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,9 @@
 		B7364CE81AD9E309006F84ED /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
 		B7364CEB1AD9E4A9006F84ED /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		B7364CEC1AD9E4A9006F84ED /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		B7915BD11ADA43AF00C31BCD /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateViewController.h; path = Stellar/Create/CreateViewController.h; sourceTree = "<group>"; };
+		B7915BD21ADA43AF00C31BCD /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateViewController.m; path = Stellar/Create/CreateViewController.m; sourceTree = "<group>"; };
+		B7915BD31ADA43AF00C31BCD /* CreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateViewController.xib; path = Stellar/Create/CreateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +176,7 @@
 				2AD0C0071AD9A6A400453D1D /* Astronauts */,
 				B7364CE11AD9DDA1006F84ED /* Libraries */,
 				2AD0C0101AD9A74100453D1D /* Live */,
+				B7915BD01ADA434B00C31BCD /* Create */,
 				B7364CEA1AD9E4A9006F84ED /* Managers */,
 				72C9D6C91AD9CCE80013CAC9 /* Frameworks */,
 			);
@@ -340,6 +346,17 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		B7915BD01ADA434B00C31BCD /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				B7915BD11ADA43AF00C31BCD /* CreateViewController.h */,
+				B7915BD21ADA43AF00C31BCD /* CreateViewController.m */,
+				B7915BD31ADA43AF00C31BCD /* CreateViewController.xib */,
+			);
+			name = Create;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +443,7 @@
 				2AD0BFDB1AD9A38200453D1D /* Images.xcassets in Resources */,
 				2AD0BFFC1AD9A63700453D1D /* ChallengesViewController.xib in Resources */,
 				2AD0C0011AD9A65E00453D1D /* ProfileViewController.xib in Resources */,
+				B7915BD51ADA43AF00C31BCD /* CreateViewController.xib in Resources */,
 				2AD0C0061AD9A69600453D1D /* AstronautsViewController.xib in Resources */,
 				2AD0BFF71AD9A60700453D1D /* LoginViewController.xib in Resources */,
 				2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */,
@@ -456,6 +474,7 @@
 				2AD0C0051AD9A69600453D1D /* AstronautsViewController.m in Sources */,
 				B7364CE91AD9E309006F84ED /* Client.m in Sources */,
 				2AD0C0001AD9A65E00453D1D /* ProfileViewController.m in Sources */,
+				B7915BD41ADA43AF00C31BCD /* CreateViewController.m in Sources */,
 				2AF6189D1AD9EA2400537E43 /* AstronautsTableViewCell.m in Sources */,
 				2AD0C00E1AD9A73900453D1D /* LiveViewController.m in Sources */,
 				B7364CE51AD9DDA1006F84ED /* MBProgressHUD.m in Sources */,
