@@ -8,6 +8,7 @@
 
 #import "ChallengesViewController.h"
 #import "ChallengeTableViewCell.h"
+#import "CreateViewController.h"
 
 @interface ChallengesViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *voteChallengeListView;
@@ -80,6 +81,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 150.0f;
+}
+
+//Creating a new challenge
+- (void)add:(id)sender {
+    CreateViewController *createController = [[CreateViewController alloc] init];
+    createController.delegate = self;
 }
 
 @end
