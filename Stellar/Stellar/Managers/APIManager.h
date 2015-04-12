@@ -25,6 +25,9 @@
 -(void)requestReservationsForCurrentUserWithSuccessBlock:(void (^)(NSArray *result))successBlock FailureBlock:(void(^)(NSError *error))errorBlock;
 
 -(void)requestHistoryForCurrentUserWithSuccessBlock:(void (^)(NSArray *result))successBlock FailureBlock:(void(^)(NSError *error))errorBlock;
-    
+
 -(void)setSharedUser:(Client *)user;
+
+-(Client *)getSharedUser;
+
 @end

@@ -8,14 +8,21 @@
 
 #import "ProfileViewController.h"
 #import "CircleProgressBar.h"
+#import "APIManager.h"
+#import "Client.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController (){
     int currentProgress;
+    PFObject *currentUser;
 }
 
 @property (weak, nonatomic) IBOutlet CircleProgressBar *circleProgressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *badgesScrollview;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 
 @end
 
@@ -33,10 +40,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_circleProgressBar setStartAngle:270];
-    [_circleProgressBar setProgress:0.57 animated:YES];
     _profileImageView.layer.cornerRadius = 106;//Half of the height
     _profileImageView.layer.masksToBounds = YES;
+    _profileImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    NSArray *ranks = [NSArray arrayWithObjects: @"Space Baby", @"Space Cadet", @"Cosmonaut", @"Astronaut", @"Jedi", nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[PFUser currentUser] refreshInBackgroundWithBlock:
+         ^(PFObject *object, NSError *error){
+             currentUser = [PFUser currentUser];
+             _usernameLabel.text = currentUser[@"name"];
+             int points = [(NSString *)currentUser[@"points"] intValue];
+             int rankPos = (points/100)<ranks.count?(points/100):(int)ranks.count-1;
+             _rankLabel.text = ranks[rankPos];
+             _pointsLabel.text = [NSString stringWithFormat:@"%d", points];
+             [_circleProgressBar setStartAngle:270];
+             [_circleProgressBar setProgress:0.57 animated:YES];
+             NSString *imageUrl = currentUser[@"pictureUrl"];
+             if (imageUrl) {
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+                     
+                     _profileImageView.image = [UIImage imageWithData:imageData];
+                 });
+             }
+
+         }];
+        
+    });
+
+    
+   
+    
     NSArray *images = [NSArray arrayWithObjects: @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", @"trophy_placeholder", nil];
     [self loadImagesScrollView:images];
     _badgesScrollview.showsHorizontalScrollIndicator = false;
@@ -50,12 +85,12 @@
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeLeft];
-    swipeLeft.delegate = self;
+//    swipeLeft.delegate = self;
     
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swipeRight];
-    swipeRight.delegate = self;
+//    swipeRight.delegate = self;
 }
 
 -(void) swipeLeft:(UISwipeGestureRecognizer *) recognizer {
