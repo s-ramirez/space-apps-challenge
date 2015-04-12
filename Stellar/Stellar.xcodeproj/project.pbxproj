@@ -26,6 +26,7 @@
 		2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618961AD9CF7900537E43 /* ChallengeTableViewCell.xib */; };
 		2AF6189D1AD9EA2400537E43 /* AstronautsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */; };
 		2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */; };
+		2AF618B01AD9F78300537E43 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618AF1AD9F78300537E43 /* CircleProgressBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		2AF6189A1AD9EA2400537E43 /* AstronautsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AstronautsTableViewCell.h; path = AstronautsCell/AstronautsTableViewCell.h; sourceTree = "<group>"; };
 		2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AstronautsTableViewCell.m; path = AstronautsCell/AstronautsTableViewCell.m; sourceTree = "<group>"; };
 		2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AstronautsTableViewCell.xib; path = AstronautsCell/AstronautsTableViewCell.xib; sourceTree = "<group>"; };
+		2AF618AE1AD9F78300537E43 /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
+		2AF618AF1AD9F78300537E43 /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,9 +227,19 @@
 			name = AstronautsCell;
 			sourceTree = "<group>";
 		};
+		2AF618AD1AD9F78300537E43 /* CircleProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				2AF618AE1AD9F78300537E43 /* CircleProgressBar.h */,
+				2AF618AF1AD9F78300537E43 /* CircleProgressBar.m */,
+			);
+			path = CircleProgressBar;
+			sourceTree = "<group>";
+		};
 		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AF618AD1AD9F78300537E43 /* CircleProgressBar */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,6 +354,7 @@
 				2AF618971AD9CF7900537E43 /* ChallengeTableViewCell.m in Sources */,
 				2AD0BFCD1AD9A38200453D1D /* main.m in Sources */,
 				2AD0BFFB1AD9A63700453D1D /* ChallengesViewController.m in Sources */,
+				2AF618B01AD9F78300537E43 /* CircleProgressBar.m in Sources */,
 				2AD0BFF61AD9A60700453D1D /* LoginViewController.m in Sources */,
 				2AD0C0051AD9A69600453D1D /* AstronautsViewController.m in Sources */,
 				2AD0C0001AD9A65E00453D1D /* ProfileViewController.m in Sources */,
