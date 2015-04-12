@@ -26,6 +26,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [Parse setApplicationId:@"XcKF1osnd9lmHdNW0A3PCvinbCZeYnGb9l1vlT6R" clientKey:@"RgannDRVGc23n5623xB3YuniHI499UobSpPVnNRt"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     UIColor *navColor = [UIColor colorWithRed:243.0 green:232/255.0 blue:2/255.0 alpha:1];
     NSDictionary *navStyle = @{
                                NSForegroundColorAttributeName: [UIColor blackColor]
@@ -71,9 +74,6 @@
     
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    [Parse setApplicationId:@"XcKF1osnd9lmHdNW0A3PCvinbCZeYnGb9l1vlT6R" clientKey:@"RgannDRVGc23n5623xB3YuniHI499UobSpPVnNRt"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     [PFFacebookUtils initializeFacebook];
     

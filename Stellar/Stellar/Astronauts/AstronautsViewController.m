@@ -14,13 +14,20 @@
 
 @end
 
-@implementation AstronautsViewController
+@implementation AstronautsViewController {
+    NSMutableArray *astronauts;
+    MBProgressHUD *hudProgress;
+}
+
+@synthesize tableView = _tableView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        astronauts = [[NSMutableArray alloc] init];
+        [self fetchAstronauts];
         self.title = NSLocalizedString(@"Astronauts", @"Astronauts");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
@@ -39,16 +46,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - table view delegate methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;    //count of section
+    return [astronauts count];    //count of section
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return 10;
+        return 1;
 
 }
 
@@ -61,7 +66,21 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"astronautsTableViewCell"];
     }
     
-//TODO: SETUP UI
+    if([astronauts count] > 0) {
+        PFObject *astronaut = [astronauts objectAtIndex:indexPath.section];
+        cell.title.text = astronaut[@"name"];
+        cell.subLabel.text = astronaut[@"bio"];
+        NSString *imageUrl = astronaut[@"pictureUrl"];
+        
+        if(imageUrl) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+                cell.mainImage.image = [UIImage imageWithData:imageData];
+                [hudProgress hide:YES];
+            });
+        }
+        
+    }
     
     return cell;
 }
@@ -70,6 +89,36 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 150.0f;
+}
+
+//Fetch all astronauts from Parse platform
+- (void) fetchAstronauts{
+    [self startLoader];
+    PFQuery *query = [PFQuery queryWithClassName:@"Astronaut"];
+    [query orderByAscending:@"name"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                [astronauts addObject:object];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self.tableView reloadData];
+            });
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            [hudProgress hide:YES];
+        }
+    }];
+}
+
+//Display a loader while fetching items
+- (void) startLoader{
+    hudProgress = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hudProgress];
+    [hudProgress show:YES];
 }
 
 @end
