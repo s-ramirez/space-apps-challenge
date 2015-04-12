@@ -8,6 +8,7 @@
 
 #import "AstronautsViewController.h"
 #import "AstronautsTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface AstronautsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *astronautsTableView;
@@ -80,14 +81,11 @@
         
         if(imageUrl) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-                cell.mainImage.image = [UIImage imageWithData:imageData];
+                [cell.mainImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
                 [hudProgress hide:YES];
             });
         }
-        
     }
-    
     return cell;
 }
 

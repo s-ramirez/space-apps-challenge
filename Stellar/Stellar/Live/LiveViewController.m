@@ -271,11 +271,9 @@
 }
 
 -(void)handleTap:(UITapGestureRecognizer*)sender {
-    NSLog(@"Tap");
     GLCell *cell = (GLCell*)sender.view;
     UIImage* imageView = cell.displayPhoto.image;
     NSString* title = cell.displayString;
-    NSLog(@"Title %@", title);
     
     PhotoDetail* photoDetail = [[PhotoDetail alloc]init];
     photoDetail.title = title;
@@ -284,7 +282,6 @@
     DetailPhotoViewController* detail = [[DetailPhotoViewController alloc]init];
     detail.photoDetail = photoDetail;
     [self presentViewController:detail animated:YES completion:nil];
-    //[self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegate

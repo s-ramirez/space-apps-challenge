@@ -12,6 +12,8 @@
 #import "Client.h"
 #import <Parse/Parse.h>
 
+#define kColorProgress [UIColor colorWithRed:77.0 / 255.0 green:112.0 / 255.0 blue:130.0 / 255.0 alpha:1.0]
+
 @interface ProfileViewController (){
     int currentProgress;
     PFObject *currentUser;
@@ -56,6 +58,7 @@
     _profileImageView.layer.masksToBounds = YES;
     _profileImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_circleProgressBar setStartAngle:270];
+    [_circleProgressBar setProgressBarProgressColor:kColorProgress];
     
     NSArray *ranks = [NSArray arrayWithObjects: @"Space Baby", @"Space Cadet", @"Cosmonaut", @"Astronaut", @"Jedi", nil];
     dispatch_async(dispatch_get_main_queue(), ^{
