@@ -20,6 +20,7 @@
 
 - (void) createRequest {
     _arrayUrlImages = [[NSMutableArray alloc]init];
+    _arrayTitles = [[NSMutableArray alloc]init];
     [self getUserID];
 }
 
@@ -57,13 +58,16 @@
                    @"format":@"json",
                    @"nojsoncallback":@"1"}
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"Array %@", responseObject);
          NSArray *photos = [[responseObject objectForKey:@"photos"] objectForKey:@"photo"];
          for (NSDictionary *photo in photos) {
              NSString *title = [photo objectForKey:@"title"];
+             [_arrayTitles addObject:title];
              NSString *photoURLString = [NSString stringWithFormat:@"http://farm%@.static.flickr.com", [photo objectForKey:@"farm"]];
              photoURLString = [NSString stringWithFormat:@"%@/%@/%@_%@.jpg", photoURLString, [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
              [_arrayUrlImages addObject:photoURLString];
          }
+             
              [self.delegate finishDownloadImages];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          NSLog(@"Error: %@", error.localizedDescription);

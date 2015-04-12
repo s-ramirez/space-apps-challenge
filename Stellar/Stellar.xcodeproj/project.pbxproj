@@ -29,6 +29,9 @@
 		2AF618B51ADA59DE00537E43 /* VotingChallengeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */; };
 		2AF618B61ADA59DE00537E43 /* VotingChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */; };
 		720121BA1ADA59C30018D659 /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720121B91ADA59C30018D659 /* LiveViewController.xib */; };
+		725330381ADA7D0C004E3FB0 /* PhotoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 725330371ADA7D0C004E3FB0 /* PhotoDetail.m */; };
+		725C5C151ADA725F00C543D4 /* DetailPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725C5C131ADA725F00C543D4 /* DetailPhotoViewController.m */; };
+		725C5C161ADA725F00C543D4 /* DetailPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725C5C141ADA725F00C543D4 /* DetailPhotoViewController.xib */; };
 		72BEAA001ADA5E920012C880 /* GLSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BEA9FF1ADA5E920012C880 /* GLSectionView.m */; };
 		72C9D73B1ADA56400013CAC9 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C9D73A1ADA56400013CAC9 /* FlickrRequest.m */; };
 		72C9D7421ADA565B0013CAC9 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C9D73F1ADA565B0013CAC9 /* UIScrollView+SVInfiniteScrolling.m */; };
@@ -127,6 +130,11 @@
 		2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingChallengeTableViewCell.m; path = votingCell/VotingChallengeTableViewCell.m; sourceTree = "<group>"; };
 		2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VotingChallengeTableViewCell.xib; path = votingCell/VotingChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		720121B91ADA59C30018D659 /* LiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveViewController.xib; sourceTree = "<group>"; };
+		725330361ADA7D0C004E3FB0 /* PhotoDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetail.h; sourceTree = "<group>"; };
+		725330371ADA7D0C004E3FB0 /* PhotoDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetail.m; sourceTree = "<group>"; };
+		725C5C121ADA725F00C543D4 /* DetailPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPhotoViewController.h; sourceTree = "<group>"; };
+		725C5C131ADA725F00C543D4 /* DetailPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPhotoViewController.m; sourceTree = "<group>"; };
+		725C5C141ADA725F00C543D4 /* DetailPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPhotoViewController.xib; sourceTree = "<group>"; };
 		72BEA9FE1ADA5E920012C880 /* GLSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLSectionView.h; sourceTree = "<group>"; };
 		72BEA9FF1ADA5E920012C880 /* GLSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLSectionView.m; sourceTree = "<group>"; };
 		72C9D7391ADA56400013CAC9 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
@@ -359,9 +367,9 @@
 		2AD0C0101AD9A74100453D1D /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				725330391ADA7F23004E3FB0 /* Detail */,
+				725C5C111ADA723700C543D4 /* Flickr */,
 				72C9D79A1ADA57120013CAC9 /* Cells */,
-				72C9D7391ADA56400013CAC9 /* FlickrRequest.h */,
-				72C9D73A1ADA56400013CAC9 /* FlickrRequest.m */,
 				2AD0C00B1AD9A73900453D1D /* LiveViewController.h */,
 				2AD0C00C1AD9A73900453D1D /* LiveViewController.m */,
 				720121B91ADA59C30018D659 /* LiveViewController.xib */,
@@ -407,6 +415,27 @@
 				2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */,
 			);
 			name = VotingCell;
+			sourceTree = "<group>";
+		};
+		725330391ADA7F23004E3FB0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				725C5C121ADA725F00C543D4 /* DetailPhotoViewController.h */,
+				725C5C131ADA725F00C543D4 /* DetailPhotoViewController.m */,
+				725C5C141ADA725F00C543D4 /* DetailPhotoViewController.xib */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		725C5C111ADA723700C543D4 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				725330361ADA7D0C004E3FB0 /* PhotoDetail.h */,
+				725330371ADA7D0C004E3FB0 /* PhotoDetail.m */,
+				72C9D7391ADA56400013CAC9 /* FlickrRequest.h */,
+				72C9D73A1ADA56400013CAC9 /* FlickrRequest.m */,
+			);
+			name = Flickr;
 			sourceTree = "<group>";
 		};
 		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
@@ -659,6 +688,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725C5C161ADA725F00C543D4 /* DetailPhotoViewController.xib in Resources */,
 				2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */,
 				720121BA1ADA59C30018D659 /* LiveViewController.xib in Resources */,
 				2AD0BFDE1AD9A38200453D1D /* LaunchScreen.xib in Resources */,
@@ -700,6 +730,7 @@
 				72C9D7431ADA565B0013CAC9 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				72C9D7901ADA56FE0013CAC9 /* SDWebImageDownloaderOperation.m in Sources */,
 				72C9D7921ADA56FE0013CAC9 /* SDWebImagePrefetcher.m in Sources */,
+				725C5C151ADA725F00C543D4 /* DetailPhotoViewController.m in Sources */,
 				72C9D73B1ADA56400013CAC9 /* FlickrRequest.m in Sources */,
 				2AF618B01AD9F78300537E43 /* CircleProgressBar.m in Sources */,
 				2AD0BFF61AD9A60700453D1D /* LoginViewController.m in Sources */,
@@ -707,6 +738,7 @@
 				72C9D74A1ADA56D50013CAC9 /* GLGooglePlusLikeLayout.m in Sources */,
 				B7364CED1AD9E4A9006F84ED /* APIManager.m in Sources */,
 				72C9D7931ADA56FE0013CAC9 /* UIButton+WebCache.m in Sources */,
+				725330381ADA7D0C004E3FB0 /* PhotoDetail.m in Sources */,
 				72C9D7941ADA56FE0013CAC9 /* UIImage+GIF.m in Sources */,
 				72C9D7611ADA56EC0013CAC9 /* AFHTTPSessionManager.m in Sources */,
 				2AD0C0051AD9A69600453D1D /* AstronautsViewController.m in Sources */,

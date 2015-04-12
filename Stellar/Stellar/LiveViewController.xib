@@ -22,7 +22,7 @@
             <subviews>
                 <view contentMode="scaleToFill" id="ibq-Da-mnY">
                     <rect key="frame" x="0.0" y="104" width="375" height="513"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+		    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.98823529409999999" green="0.68627450980000004" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="yX5-ww-7Tf">
