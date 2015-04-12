@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "Client.h"
 #import "APIManager.h"
+#import "UIImage+animatedGIF.h"
 
 
 @interface LoginViewController ()
@@ -35,6 +36,8 @@
 {
     [super viewDidLoad];
     [self startLoader];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"1" withExtension:@"gif"];
+    _gif.image = [UIImage animatedImageWithAnimatedGIFURL:url];
 }
 
 - (void)didReceiveMemoryWarning

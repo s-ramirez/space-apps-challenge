@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0187CC1ADAE14F007E8C9C /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0187CB1ADAE14F007E8C9C /* UIImage+animatedGIF.m */; };
+		2A0187CE1ADAE1C7007E8C9C /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 2A0187CD1ADAE1C7007E8C9C /* COPYRIGHT */; };
+		2A0187D01ADAE38D007E8C9C /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A0187CF1ADAE38D007E8C9C /* 1.gif */; };
+		2A2686111ADAE733001CBDFB /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A2686101ADAE733001CBDFB /* 2.gif */; };
+		2A2686141ADAEA06001CBDFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2686121ADAEA06001CBDFB /* LaunchScreen.xib */; };
 		2AD0BFCD1AD9A38200453D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0BFCC1AD9A38200453D1D /* main.m */; };
 		2AD0BFD01AD9A38200453D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0BFCF1AD9A38200453D1D /* AppDelegate.m */; };
 		2AD0BFDB1AD9A38200453D1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0BFDA1AD9A38200453D1D /* Images.xcassets */; };
-		2AD0BFDE1AD9A38200453D1D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0BFDC1AD9A38200453D1D /* LaunchScreen.xib */; };
 		2AD0BFEA1AD9A38200453D1D /* StellarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0BFE91AD9A38200453D1D /* StellarTests.m */; };
 		2AD0BFF61AD9A60700453D1D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0BFF41AD9A60700453D1D /* LoginViewController.m */; };
 		2AD0BFF71AD9A60700453D1D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0BFF51AD9A60700453D1D /* LoginViewController.xib */; };
@@ -95,13 +99,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A0187CA1ADAE14F007E8C9C /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		2A0187CB1ADAE14F007E8C9C /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		2A0187CD1ADAE1C7007E8C9C /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		2A0187CF1ADAE38D007E8C9C /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		2A2686101ADAE733001CBDFB /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		2A2686131ADAEA06001CBDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2AD0BFC71AD9A38200453D1D /* Stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD0BFCB1AD9A38200453D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AD0BFCC1AD9A38200453D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AD0BFCE1AD9A38200453D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2AD0BFCF1AD9A38200453D1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2AD0BFDA1AD9A38200453D1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2AD0BFDD1AD9A38200453D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2AD0BFE31AD9A38200453D1D /* StellarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD0BFE81AD9A38200453D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AD0BFE91AD9A38200453D1D /* StellarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StellarTests.m; sourceTree = "<group>"; };
@@ -258,6 +267,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0187C91ADAE13A007E8C9C /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				2A2686101ADAE733001CBDFB /* 2.gif */,
+				2A0187CF1ADAE38D007E8C9C /* 1.gif */,
+				2A0187CD1ADAE1C7007E8C9C /* COPYRIGHT */,
+				2A0187CA1ADAE14F007E8C9C /* UIImage+animatedGIF.h */,
+				2A0187CB1ADAE14F007E8C9C /* UIImage+animatedGIF.m */,
+			);
+			name = Gif;
+			sourceTree = "<group>";
+		};
 		2AD0BFBE1AD9A38200453D1D = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +304,6 @@
 				2AD0BFCE1AD9A38200453D1D /* AppDelegate.h */,
 				2AD0BFCF1AD9A38200453D1D /* AppDelegate.m */,
 				2AD0BFDA1AD9A38200453D1D /* Images.xcassets */,
-				2AD0BFDC1AD9A38200453D1D /* LaunchScreen.xib */,
 				2AD0BFCA1AD9A38200453D1D /* Supporting Files */,
 				2AD0C00A1AD9A71700453D1D /* Login */,
 				2AD0C0091AD9A70E00453D1D /* Challenges */,
@@ -302,6 +322,7 @@
 		2AD0BFCA1AD9A38200453D1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A2686121ADAEA06001CBDFB /* LaunchScreen.xib */,
 				2AD0BFCB1AD9A38200453D1D /* Info.plist */,
 				2AD0BFCC1AD9A38200453D1D /* main.m */,
 			);
@@ -573,6 +594,7 @@
 		B7364CE11AD9DDA1006F84ED /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2A0187C91ADAE13A007E8C9C /* Gif */,
 				72C9D7681ADA56FD0013CAC9 /* SDWebImage */,
 				72C9D74B1ADA56EC0013CAC9 /* AFNetworking */,
 				72C9D7441ADA56D50013CAC9 /* GLGooglePlusLikeLayout */,
@@ -704,15 +726,18 @@
 				725205C81ADAC99800BD4675 /* MoonBold.otf in Resources */,
 				725C5C161ADA725F00C543D4 /* DetailPhotoViewController.xib in Resources */,
 				2AF618981AD9CF7900537E43 /* ChallengeTableViewCell.xib in Resources */,
+				2A0187D01ADAE38D007E8C9C /* 1.gif in Resources */,
 				720121BA1ADA59C30018D659 /* LiveViewController.xib in Resources */,
-				2AD0BFDE1AD9A38200453D1D /* LaunchScreen.xib in Resources */,
 				2AD0BFDB1AD9A38200453D1D /* Images.xcassets in Resources */,
 				2AD0BFFC1AD9A63700453D1D /* ChallengesViewController.xib in Resources */,
 				B7915BDB1ADA6DC600C31BCD /* CreateViewController.xib in Resources */,
 				2AD0C0011AD9A65E00453D1D /* ProfileViewController.xib in Resources */,
 				2AF618B61ADA59DE00537E43 /* VotingChallengeTableViewCell.xib in Resources */,
+				2A2686111ADAE733001CBDFB /* 2.gif in Resources */,
 				2AD0C0061AD9A69600453D1D /* AstronautsViewController.xib in Resources */,
+				2A2686141ADAEA06001CBDFB /* LaunchScreen.xib in Resources */,
 				2AD0BFF71AD9A60700453D1D /* LoginViewController.xib in Resources */,
+				2A0187CE1ADAE1C7007E8C9C /* COPYRIGHT in Resources */,
 				2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +779,7 @@
 				72C9D7931ADA56FE0013CAC9 /* UIButton+WebCache.m in Sources */,
 				725330381ADA7D0C004E3FB0 /* PhotoDetail.m in Sources */,
 				72C9D7941ADA56FE0013CAC9 /* UIImage+GIF.m in Sources */,
+				2A0187CC1ADAE14F007E8C9C /* UIImage+animatedGIF.m in Sources */,
 				72C9D7611ADA56EC0013CAC9 /* AFHTTPSessionManager.m in Sources */,
 				2AD0C0051AD9A69600453D1D /* AstronautsViewController.m in Sources */,
 				B7364CE91AD9E309006F84ED /* Client.m in Sources */,
@@ -802,10 +828,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2AD0BFDC1AD9A38200453D1D /* LaunchScreen.xib */ = {
+		2A2686121ADAEA06001CBDFB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2AD0BFDD1AD9A38200453D1D /* Base */,
+				2A2686131ADAEA06001CBDFB /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

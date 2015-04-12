@@ -12,6 +12,7 @@
 @interface LoginViewController : UIViewController<MBProgressHUDDelegate>
 
 - (IBAction)loginButtonTouchHandler:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *gif;
 
 
 @end
