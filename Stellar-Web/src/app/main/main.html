@@ -1,0 +1,23 @@
+<md-content layout-padding>
+	<div layout layout-sm="column">
+    	<md-input-container flex>
+			<label>Search</label>
+			<input ng-model="main.search" type="text">
+		</md-input-container>
+        <md-select placeholder="Order by" ng-model="main.order" flex>
+		    <md-option value="attributes.title">Title</md-option>
+		    <md-option value="attributes.description">Description</md-option>
+		    <md-option value="attributes.votes">Votes</md-option>
+		</md-select>
+      </div>
+	<md-list>
+		<md-list-item class="md-3-line" ng-repeat="item in main.challenges | filter: main.search | orderBy: main.order: false">
+			<img ng-src="{{item.get('image').url()}}?{{$index}}" class="md-avatar" />
+			<div class="md-list-item-text">
+				<h3>{{ item.attributes.title }}</h3>
+				<h4>{{ item.attributes.description }}</h4>
+				<p>{{ item.attributes.votes }}</p>
+			</div>
+		</md-list-item>
+	</md-list>
+</md-content>
