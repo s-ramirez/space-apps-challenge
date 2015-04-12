@@ -147,12 +147,20 @@
         votingCell.descriptionTextView.text = voteChallenges[indexPath.row][@"description"];
         int votes = [voteChallenges[indexPath.row][@"votes"] intValue];
         votingCell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSData *imageData = [voteChallenges[indexPath.row][@"image"] getData];
+            votingCell.challengeImageView.image = [UIImage imageWithData:imageData];
+        });
         return votingCell;
     } else {
         cell.titleLabel.text = winningChallenges[indexPath.row][@"title"];
         cell.descriptionTextView.text = winningChallenges[indexPath.row][@"description"];
         int votes = [winningChallenges[indexPath.row][@"votes"] intValue];
         cell.votesLabel.text = [NSString stringWithFormat:@"%d votes", votes];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSData *imageData = [winningChallenges[indexPath.row][@"image"] getData];
+            cell.challengeImageView.image = [UIImage imageWithData:imageData];
+        });
         return cell;
     }
 }
