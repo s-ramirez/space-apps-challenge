@@ -181,8 +181,8 @@
         cell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
         cell.videoUrl = winningChallenges[indexPath.row][@"videoUrl"] ;
         dispatch_async(dispatch_get_main_queue(), ^{
-            PFFile* imageFile = [voteChallenges objectAtIndex:indexPath.row][@"image"];
-            [votingCell.challengeImageView sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
+            PFFile* imageFile = [winningChallenges objectAtIndex:indexPath.row][@"image"];
+            [cell.challengeImageView sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
             [hudProgress hide:YES];
         });
         if (indexPath.row % 2) {
