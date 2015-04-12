@@ -157,6 +157,7 @@
         cell.descriptionTextView.text = winningChallenges[indexPath.row][@"description"];
         int votes = [winningChallenges[indexPath.row][@"votes"] intValue];
         cell.votesLabel.text = [NSString stringWithFormat:@"%d votes", votes];
+        cell.videoUrl = winningChallenges[indexPath.row][@"videoUrl"] ;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSData *imageData = [winningChallenges[indexPath.row][@"image"] getData];
             cell.challengeImageView.image = [UIImage imageWithData:imageData];
