@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import "VotingChallengeTableViewCell.h"
 #import "CreateViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface ChallengesViewController (){
     NSMutableArray *voteChallenges;
@@ -158,10 +159,11 @@
             [votingCell.descriptionTextView setFont:[UIFont systemFontOfSize:8]];
             int votes = [voteChallenges[indexPath.row][@"votes"] intValue];
             votingCell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSData *imageData = [voteChallenges[indexPath.row][@"image"] getData];
-                votingCell.challengeImageView.image = [UIImage imageWithData:imageData];
-            });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    PFFile* imageFile = [voteChallenges objectAtIndex:indexPath.row][@"image"];
+                    [votingCell.challengeImageView sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
+                    [hudProgress hide:YES];
+                });
             if (indexPath.row % 2) {
                 votingCell.contentView.backgroundColor = [[UIColor alloc]initWithRed:232.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1];
             } else {
@@ -179,8 +181,9 @@
         cell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
         cell.videoUrl = winningChallenges[indexPath.row][@"videoUrl"] ;
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSData *imageData = [winningChallenges[indexPath.row][@"image"] getData];
-            cell.challengeImageView.image = [UIImage imageWithData:imageData];
+            PFFile* imageFile = [voteChallenges objectAtIndex:indexPath.row][@"image"];
+            [votingCell.challengeImageView sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"default_bg" ]];
+            [hudProgress hide:YES];
         });
         if (indexPath.row % 2) {
             cell.contentView.backgroundColor = [[UIColor alloc]initWithRed:232.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1];
