@@ -27,7 +27,7 @@
         btnImage = [UIImage imageNamed:@"subscribe"];
     }
     else {
-        btnImage = [UIImage imageNamed:@"subscribe"];
+        btnImage = [UIImage imageNamed:@"unsubscribe"];
     }
     isSelected = !isSelected;
     [self.subscribeBtn setImage:btnImage forState:UIControlStateNormal];
