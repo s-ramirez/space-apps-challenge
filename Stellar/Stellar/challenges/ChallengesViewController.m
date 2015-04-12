@@ -20,6 +20,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *voteChallengeListView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedChallenges;
 @property (strong, nonatomic) IBOutlet UITableView *winnerChallengeListView;
 @end
 
@@ -44,8 +45,8 @@
     NSArray *barButtons = [NSArray arrayWithObjects:addBtn, searchBtn, nil];
     self.navigationItem.rightBarButtonItems = barButtons;
     
-    [_voteChallengeListView setHidden:NO];
-    [_winnerChallengeListView setHidden:YES];
+
+    _voteChallengeListView.contentInset = UIEdgeInsetsMake(-60, 0, -40, 0);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -53,6 +54,9 @@
     winningChallenges = [[NSMutableArray alloc] init];
     [_voteChallengeListView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
     [_winnerChallengeListView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    [_voteChallengeListView setHidden:NO];
+    [_winnerChallengeListView setHidden:YES];
+    [_segmentedChallenges setSelectedSegmentIndex:0];
     [self fetchChallenges];
 }
 
@@ -148,25 +152,42 @@
     }
     [hudProgress hide:YES];
     if ([tableView isEqual:_voteChallengeListView]) {
-        votingCell.titleLabel.text = voteChallenges[indexPath.row][@"title"];
-        votingCell.descriptionTextView.text = voteChallenges[indexPath.row][@"description"];
-        int votes = [voteChallenges[indexPath.row][@"votes"] intValue];
-        votingCell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSData *imageData = [voteChallenges[indexPath.row][@"image"] getData];
-            votingCell.challengeImageView.image = [UIImage imageWithData:imageData];
-        });
+        if (voteChallenges.count != 0) {
+            votingCell.titleLabel.text = voteChallenges[indexPath.row][@"title"];
+            votingCell.descriptionTextView.text = voteChallenges[indexPath.row][@"description"];
+            [votingCell.descriptionTextView setTextColor:[[UIColor alloc]initWithRed:77/255.0 green:112/255.0 blue:130/255.0 alpha:1]];
+            [votingCell.descriptionTextView setFont:[UIFont systemFontOfSize:8]];
+            int votes = [voteChallenges[indexPath.row][@"votes"] intValue];
+            votingCell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSData *imageData = [voteChallenges[indexPath.row][@"image"] getData];
+                votingCell.challengeImageView.image = [UIImage imageWithData:imageData];
+            });
+            if (indexPath.row % 2) {
+                votingCell.contentView.backgroundColor = [[UIColor alloc]initWithRed:232.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1];
+            } else {
+                votingCell.contentView.backgroundColor = [[UIColor alloc]initWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
+            }
+            
+        }
         return votingCell;
     } else {
         cell.titleLabel.text = winningChallenges[indexPath.row][@"title"];
         cell.descriptionTextView.text = winningChallenges[indexPath.row][@"description"];
+        [cell.descriptionTextView setTextColor:[[UIColor alloc]initWithRed:77/255.0 green:112/255.0 blue:130/255.0 alpha:1]];
+        [cell.descriptionTextView setFont:[UIFont systemFontOfSize:8]];
         int votes = [winningChallenges[indexPath.row][@"votes"] intValue];
-        cell.votesLabel.text = [NSString stringWithFormat:@"%d votes", votes];
+        cell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
         cell.videoUrl = winningChallenges[indexPath.row][@"videoUrl"] ;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSData *imageData = [winningChallenges[indexPath.row][@"image"] getData];
             cell.challengeImageView.image = [UIImage imageWithData:imageData];
         });
+        if (indexPath.row % 2) {
+            cell.contentView.backgroundColor = [[UIColor alloc]initWithRed:232.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1];
+        } else {
+            cell.contentView.backgroundColor = [[UIColor alloc]initWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
+        }
         return cell;
     }
 }
