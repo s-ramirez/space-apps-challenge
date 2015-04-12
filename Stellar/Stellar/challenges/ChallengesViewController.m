@@ -80,9 +80,8 @@
     CreateViewController *createView =[[CreateViewController alloc] init];
     createView.delegate = self;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:createView];
+    [self presentViewController:createView animated:YES completion:nil];
     
-    [self presentViewController:navController animated:YES completion:nil];
 }
 
 //Fetch all astronauts from Parse platform

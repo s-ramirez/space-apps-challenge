@@ -6,19 +6,43 @@
 //  Copyright (c) 2015 Appslab. All rights reserved.
 //
 #import "CreateViewController.h"
+#import "CircleProgressBar.h"
+#import <Parse/Parse.h>
 
 @interface CreateViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     NSData *uploadImage;
     MBProgressHUD *hudProgress;
+    int currentProgress;
+    PFObject *currentUser;
+    BOOL loaded;
+    
 }
+
+@property (weak, nonatomic) IBOutlet CircleProgressBar *circleProgressBar;
 
 @end
 
 @implementation CreateViewController
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _userImage.layer.cornerRadius = 33;//Half of the height
+    _userImage.layer.masksToBounds = YES;
+    _userImage.contentMode = UIViewContentModeScaleAspectFill;
+    [_circleProgressBar setStartAngle:270];
+    [_circleProgressBar setProgressBarWidth:4];
+    [_circleProgressBar setProgress:0.57 animated:YES];
     // Do any additional setup after loading the view from its nib.
+    NSArray *ranks = [NSArray arrayWithObjects: @"Space Baby", @"Space Cadet", @"Cosmonaut", @"Astronaut", @"Jedi", nil];
+    
+    currentUser = [PFUser currentUser];
+    _username.text = currentUser[@"name"];
+    int points = [(NSString *)currentUser[@"points"] intValue];
+    int rankPos = (points/100)<ranks.count?(points/100):(int)ranks.count-1;
+    _rankLabel.text = ranks[rankPos];
 }
 
 - (void)didReceiveMemoryWarning {
