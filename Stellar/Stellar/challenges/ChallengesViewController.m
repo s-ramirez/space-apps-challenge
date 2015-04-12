@@ -31,9 +31,6 @@
         // Custom initialization
         self.title = NSLocalizedString(@"Challenges", @"Challenges");
         self.tabBarItem.image = [UIImage imageNamed:@"challenges"];
-        voteChallenges = [[NSMutableArray alloc] init];
-        winningChallenges = [[NSMutableArray alloc] init];
-        [self fetchChallenges];
     }
     return self;
 }
@@ -49,6 +46,14 @@
     
     [_voteChallengeListView setHidden:NO];
     [_winnerChallengeListView setHidden:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    voteChallenges = [[NSMutableArray alloc] init];
+    winningChallenges = [[NSMutableArray alloc] init];
+    [_voteChallengeListView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    [_winnerChallengeListView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    [self fetchChallenges];
 }
 
 - (IBAction)toggleViews:(id)sender {
