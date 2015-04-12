@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import <Parse/Parse.h>
 
 @interface CreateViewController : UIViewController
 
 @property(nonatomic, assign) id delegate;
+
+- (IBAction)pickImage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *selectedImage;
+- (IBAction)uploadChallenge:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *challengeTitle;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 @end

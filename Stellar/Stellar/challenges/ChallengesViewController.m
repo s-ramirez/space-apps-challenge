@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
 #import "VotingChallengeTableViewCell.h"
+#import "CreateViewController.h"
 
 @interface ChallengesViewController (){
     NSMutableArray *voteChallenges;
@@ -39,6 +40,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(displayCreateView)];
+    UIBarButtonItem *searchBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:nil];
+    
+    NSArray *barButtons = [NSArray arrayWithObjects:addBtn, searchBtn, nil];
+    self.navigationItem.rightBarButtonItems = barButtons;
+    
     [_voteChallengeListView setHidden:NO];
     [_winnerChallengeListView setHidden:YES];
 }
@@ -56,6 +64,16 @@
             [_winnerChallengeListView setHidden:NO];
             break;
     }
+}
+
+//Display create view modal
+- (void) displayCreateView{
+    CreateViewController *createView =[[CreateViewController alloc] init];
+    createView.delegate = self;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:createView];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 //Fetch all astronauts from Parse platform
