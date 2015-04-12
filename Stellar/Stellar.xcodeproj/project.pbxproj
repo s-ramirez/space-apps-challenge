@@ -27,6 +27,8 @@
 		2AF6189D1AD9EA2400537E43 /* AstronautsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF6189B1AD9EA2400537E43 /* AstronautsTableViewCell.m */; };
 		2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */; };
 		2AF618B01AD9F78300537E43 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618AF1AD9F78300537E43 /* CircleProgressBar.m */; };
+		2AF618B51ADA59DE00537E43 /* VotingChallengeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */; };
+		2AF618B61ADA59DE00537E43 /* VotingChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */; };
 		B7364CC51AD9D67A006F84ED /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7364CC41AD9D67A006F84ED /* FacebookSDK.framework */; };
 		B7364CC71AD9D682006F84ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7364CC61AD9D682006F84ED /* Parse.framework */; };
 		B7364CD21AD9DBB7006F84ED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7364CD01AD9DB86006F84ED /* MobileCoreServices.framework */; };
@@ -88,6 +90,9 @@
 		2AF6189C1AD9EA2400537E43 /* AstronautsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AstronautsTableViewCell.xib; path = AstronautsCell/AstronautsTableViewCell.xib; sourceTree = "<group>"; };
 		2AF618AE1AD9F78300537E43 /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
 		2AF618AF1AD9F78300537E43 /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
+		2AF618B21ADA59DE00537E43 /* VotingChallengeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VotingChallengeTableViewCell.h; path = votingCell/VotingChallengeTableViewCell.h; sourceTree = "<group>"; };
+		2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingChallengeTableViewCell.m; path = votingCell/VotingChallengeTableViewCell.m; sourceTree = "<group>"; };
+		2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VotingChallengeTableViewCell.xib; path = votingCell/VotingChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		B7364CC41AD9D67A006F84ED /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		B7364CC61AD9D682006F84ED /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B7364CC81AD9DB69006F84ED /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -227,6 +232,7 @@
 		2AD0C0091AD9A70E00453D1D /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
+				2AF618B11ADA59B300537E43 /* VotingCell */,
 				2AF618931AD9CF1800537E43 /* ChallengeCell */,
 				2AD0BFF81AD9A63700453D1D /* ChallengesViewController.h */,
 				2AD0BFF91AD9A63700453D1D /* ChallengesViewController.m */,
@@ -283,6 +289,16 @@
 			);
 			name = CircleProgressBar;
 			path = ../CircleProgressBar;
+			sourceTree = "<group>";
+		};
+		2AF618B11ADA59B300537E43 /* VotingCell */ = {
+			isa = PBXGroup;
+			children = (
+				2AF618B21ADA59DE00537E43 /* VotingChallengeTableViewCell.h */,
+				2AF618B31ADA59DE00537E43 /* VotingChallengeTableViewCell.m */,
+				2AF618B41ADA59DE00537E43 /* VotingChallengeTableViewCell.xib */,
+			);
+			name = VotingCell;
 			sourceTree = "<group>";
 		};
 		72C9D6C91AD9CCE80013CAC9 /* Frameworks */ = {
@@ -426,6 +442,7 @@
 				2AD0BFDB1AD9A38200453D1D /* Images.xcassets in Resources */,
 				2AD0BFFC1AD9A63700453D1D /* ChallengesViewController.xib in Resources */,
 				2AD0C0011AD9A65E00453D1D /* ProfileViewController.xib in Resources */,
+				2AF618B61ADA59DE00537E43 /* VotingChallengeTableViewCell.xib in Resources */,
 				2AD0C0061AD9A69600453D1D /* AstronautsViewController.xib in Resources */,
 				2AD0BFF71AD9A60700453D1D /* LoginViewController.xib in Resources */,
 				2AF6189E1AD9EA2400537E43 /* AstronautsTableViewCell.xib in Resources */,
@@ -446,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF618B51ADA59DE00537E43 /* VotingChallengeTableViewCell.m in Sources */,
 				2AD0BFD01AD9A38200453D1D /* AppDelegate.m in Sources */,
 				2AF618971AD9CF7900537E43 /* ChallengeTableViewCell.m in Sources */,
 				2AD0BFCD1AD9A38200453D1D /* main.m in Sources */,

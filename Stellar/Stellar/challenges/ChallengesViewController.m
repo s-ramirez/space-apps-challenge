@@ -10,6 +10,7 @@
 #import "ChallengeTableViewCell.h"
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
+#import "VotingChallengeTableViewCell.h"
 
 @interface ChallengesViewController (){
     NSMutableArray *voteChallenges;
@@ -110,28 +111,36 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ChallengeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"challengeTableViewCell"];
+    VotingChallengeTableViewCell *votingCell = [tableView dequeueReusableCellWithIdentifier:@"votingChallengeTableViewCell"];
+    
     
     if (!cell) {
-        [tableView registerNib:[UINib nibWithNibName:@"ChallengeTableViewCell" bundle:nil] forCellReuseIdentifier:@"challengeTableViewCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"challengeTableViewCell"];
+        if ([tableView isEqual:_voteChallengeListView]) {
+            [tableView registerNib:[UINib nibWithNibName:@"VotingChallengeTableViewCell" bundle:nil] forCellReuseIdentifier:@"votingChallengeTableViewCell"];
+            votingCell = [tableView dequeueReusableCellWithIdentifier:@"votingChallengeTableViewCell"];
+        } else {
+            [tableView registerNib:[UINib nibWithNibName:@"ChallengeTableViewCell" bundle:nil] forCellReuseIdentifier:@"challengeTableViewCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"challengeTableViewCell"];
+        }
     }
-    
+    [hudProgress hide:YES];
     if ([tableView isEqual:_voteChallengeListView]) {
-        cell.titleLabel.text = voteChallenges[indexPath.row][@"title"];
-        cell.descriptionTextView.text = voteChallenges[indexPath.row][@"description"];
+        votingCell.titleLabel.text = voteChallenges[indexPath.row][@"title"];
+        votingCell.descriptionTextView.text = voteChallenges[indexPath.row][@"description"];
         int votes = [voteChallenges[indexPath.row][@"votes"] intValue];
-        cell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
-    } else if ([tableView isEqual:_winnerChallengeListView]) {
+        votingCell.votesLabel.text = [NSString stringWithFormat:@"%d", votes];
+        return votingCell;
+    } else {
         cell.titleLabel.text = winningChallenges[indexPath.row][@"title"];
         cell.descriptionTextView.text = winningChallenges[indexPath.row][@"description"];
         int votes = [winningChallenges[indexPath.row][@"votes"] intValue];
-        cell.votesLabel.text = [NSString stringWithFormat:@"%d votes", votes];    }
-    [hudProgress hide:YES];
-    return cell;
+        cell.votesLabel.text = [NSString stringWithFormat:@"%d votes", votes];
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 149.0f;
+    return 167.0f;
 }
 
 @end
