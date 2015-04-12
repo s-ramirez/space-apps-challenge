@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ChallengeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *votesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *challengeImageView;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
 @end
