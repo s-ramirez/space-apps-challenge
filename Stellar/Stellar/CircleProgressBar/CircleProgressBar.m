@@ -26,7 +26,7 @@ const StringGenerationBlock DefaultHintTextGenerationBlock = ^NSString *(CGFloat
 };
 
 // Animation Constants
-const CGFloat AnimationChangeTimeDuration = 0.2f;
+const CGFloat AnimationChangeTimeDuration = 2.0f;
 const CGFloat AnimationChangeTimeStep = 0.01f;
 
 @interface CircleProgressBar (Private)

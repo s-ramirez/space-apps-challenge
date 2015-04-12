@@ -27,6 +27,10 @@ static APIManager *sharedManager = nil;
     _sharedUser = user;
 }
 
+-(Client *)getSharedUser{
+    return _sharedUser;
+}
+
 -(void)requestAvailableAreasWithDate:(NSDate *)date AreaTypes:(NSArray *)areaTypes WithSuccessBlock:(void (^)(NSArray *result))successBlock FailureBlock:(void(^)(NSError *error))errorBlock {
     [PFCloud callFunctionInBackground:@"getAvailableAreas"
                        withParameters:@{@"dateRequest": date, @"areaTypes": areaTypes}
