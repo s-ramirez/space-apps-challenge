@@ -17,8 +17,9 @@
 - (IBAction)pickImage:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImage;
 - (IBAction)uploadChallenge:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *challengeTitle;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UITextField *challengeTitle;
+@property (weak, nonatomic) IBOutlet UITextView *challengeDescription;
 
 @end

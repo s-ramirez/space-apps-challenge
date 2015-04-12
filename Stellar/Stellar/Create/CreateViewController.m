@@ -58,6 +58,7 @@
         PFObject *challenge = [PFObject objectWithClassName:@"Challenge"];
         challenge[@"image"] = [PFFile fileWithData:uploadImage];
         challenge[@"title"] = _challengeTitle.text;
+        challenge[@"description"] = _challengeDescription.text;
         challenge[@"votes"] = @0;
         challenge[@"winner"] = @NO;
         [challenge saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
