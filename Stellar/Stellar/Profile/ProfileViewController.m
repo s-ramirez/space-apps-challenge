@@ -15,6 +15,7 @@
 @interface ProfileViewController (){
     int currentProgress;
     PFObject *currentUser;
+    BOOL loaded;
 }
 
 @property (weak, nonatomic) IBOutlet CircleProgressBar *circleProgressBar;
@@ -38,11 +39,23 @@
     return self;
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [_circleProgressBar setProgress:0.0 animated:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    if(loaded){
+        [_circleProgressBar setProgress:0.57 animated:YES];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _profileImageView.layer.cornerRadius = 106;//Half of the height
     _profileImageView.layer.masksToBounds = YES;
     _profileImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [_circleProgressBar setStartAngle:270];
     
     NSArray *ranks = [NSArray arrayWithObjects: @"Space Baby", @"Space Cadet", @"Cosmonaut", @"Astronaut", @"Jedi", nil];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -54,8 +67,10 @@
              int rankPos = (points/100)<ranks.count?(points/100):(int)ranks.count-1;
              _rankLabel.text = ranks[rankPos];
              _pointsLabel.text = [NSString stringWithFormat:@"%d", points];
-             [_circleProgressBar setStartAngle:270];
-             [_circleProgressBar setProgress:0.57 animated:YES];
+             if(!loaded){
+                 [_circleProgressBar setProgress:0.57 animated:YES];
+                 loaded = YES;
+             }
              NSString *imageUrl = currentUser[@"pictureUrl"];
              if (imageUrl) {
                  dispatch_async(dispatch_get_main_queue(), ^{
