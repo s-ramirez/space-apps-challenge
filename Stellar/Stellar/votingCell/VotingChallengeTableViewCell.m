@@ -27,11 +27,11 @@
     UIImage *btnImage;
     if(isSelected){
         totalVotes -= 1;
-        btnImage = [UIImage imageNamed:@"first"];
+        btnImage = [UIImage imageNamed:@"like"];
     }
     else {
         totalVotes += 1;
-        btnImage = [UIImage imageNamed:@"second"];
+        btnImage = [UIImage imageNamed:@"unlike"];
     }
     _votesLabel.text = [NSString stringWithFormat:@"%d", totalVotes];
     isSelected = !isSelected;

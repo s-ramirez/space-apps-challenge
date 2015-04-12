@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengesViewController">
             <connections>
+                <outlet property="segmentedChallenges" destination="PLq-Au-AhD" id="u1e-Ko-oCZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="voteChallengeListView" destination="tTQ-Fh-f60" id="4lG-4J-JrS"/>
                 <outlet property="winnerChallengeListView" destination="8vg-Z5-Unw" id="oQ1-6a-zbh"/>
@@ -16,17 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="PLq-Au-AhD">
-                    <rect key="frame" x="8" y="73" width="359" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="Vote"/>
-                        <segment title="Winners"/>
-                    </segments>
-                    <connections>
-                        <action selector="toggleViews:" destination="-1" eventType="valueChanged" id="UHs-r9-ybm"/>
-                    </connections>
-                </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tTQ-Fh-f60">
                     <rect key="frame" x="0.0" y="109" width="375" height="512"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,6 +35,18 @@
                         <outlet property="delegate" destination="-1" id="A9I-4w-l6d"/>
                     </connections>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="PLq-Au-AhD">
+                    <rect key="frame" x="77" y="70" width="220" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Vote"/>
+                        <segment title="Winners"/>
+                    </segments>
+                    <color key="tintColor" red="0.30196078430000001" green="0.43921568630000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="toggleViews:" destination="-1" eventType="valueChanged" id="UHs-r9-ybm"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
